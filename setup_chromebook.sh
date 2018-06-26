@@ -2,7 +2,7 @@
 
 
 #Install Terraform
-sudo apt-get install -y unzip wget libffi-dev libssl-dev git curl python gcc build-essential
+sudo apt-get install -y unzip wget libffi-dev libssl-dev git curl python gcc vim build-essential
 wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_arm.zip
 unzip terraform_0.11.7_linux_arm.zip
 chmod +x terraform
