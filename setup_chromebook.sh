@@ -2,7 +2,7 @@
 
 
 #Install Terraform
-sudo apt-get install -y unzip wget libffi-dev libssl-dev
+sudo apt-get install -y unzip wget libffi-dev libssl-dev git curl python gcc build-essential
 wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_arm.zip
 unzip terraform_0.11.7_linux_arm.zip
 chmod +x terraform
@@ -16,7 +16,9 @@ mv hub-linux-arm64-2.4.0/etc/hub.bash_completion.sh ~/
 echo ". $HOME/hub.bash_completion.sh" >> ~/.bash_profile
 
 #Install pip
-sudo apt-get install -y pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py --user
+rm -rf get-pip.py
 
 #Install ansible, awscli
 pip install --user awscli ansible
