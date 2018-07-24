@@ -36,11 +36,12 @@ rm -rf terraform_0.11.7_linux_arm.zip
 
 #Install hub
 wget https://github.com/github/hub/releases/download/v2.4.0/hub-linux-arm64-2.4.0.tgz
-tar zvxf hub-linux-arm64-2.4.0.tgz
-sudo mv hub-linux-arm64-2.4.0/bin/hub /usr/local/bin/
-mv hub-linux-arm64-2.4.0/etc/hub.bash_completion.sh ~/
+tar zvxf hub-linux-arm64-2.5.0.tgz
+sudo mv hub-linux-arm64-2.5.0/bin/hub /usr/local/bin/
+mv hub-linux-arm64-2.5.0/etc/hub.bash_completion.sh ~/
 echo ". $HOME/hub.bash_completion.sh" >> ~/.bash_profile
 rm -rf hub-linux-arm64-2.4.0*
+echo 'eval "$(hub alias -s)"' >> ~/.bash_profile
 
 #Install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
