@@ -9,15 +9,6 @@ cd ~/Downloads
 sudo sh ~/Downloads/crouton -d -t core,cli-extra,touch,xfce -f ~/Downloads/mybootstrap.tar.bz2
 sudo sh ~/Downloads/crouton -t core,cli-extra,touch -a armhf -f ~/Downloads/mybootstrap.tar.bz2 -n xenial
 
-## VScode if used
-
-sudo enter-chroot -n code-oss-chroot
-sudo su -i
-wget -qO - https://packagecloud.io/headmelted/codebuilds/gpgkey | apt-key add -
-tee -a /etc/apt/sources.list.d/codebuilds.list
-apt-get update
-apt-get install -y code-oss git libibus-1.0-dev
-
 #Inside chroot
 
 sudo ln -s /media/removable/SD\ Card/movies /movies
