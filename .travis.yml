@@ -1,4 +1,4 @@
 language: bash
 
 script:
-    - bash setup_chromebook.sh
+  - bash setup_chromebook.sh

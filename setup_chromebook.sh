@@ -40,19 +40,19 @@ python get-pip.py --user
 rm -rf get-pip.py
 
 #Install ansible, awscli
-pip install --user --upgrade awscli ansible boto boto3
+pip install --user --upgrade awscli ansible boto boto3 pip
 
 ##Personalize
 
-##AWS-vault
-#compile aws-vault
-sudo apt-get install -y golang-go
+# ##AWS-vault
+# #compile aws-vault
+# sudo apt-get install -y golang-go
 
-## Setup environment variables for go
-mkdir ~/go-dir
-export GOPATH="$HOME/go-dir/"
+# ## Setup environment variables for go
+# mkdir ~/go-dir
+# export GOPATH="$HOME/go-dir/"
 
-#compile directly from github
-go get -u github.com/99designs/aws-vault
-sudo mv ~/go-dir/bin/aws-vault /usr/local/bin/
-rm -rf ~/go-dir
+# #compile directly from github
+# go get -u github.com/99designs/aws-vault
+# sudo mv ~/go-dir/bin/aws-vault /usr/local/bin/
+# rm -rf ~/go-dir
