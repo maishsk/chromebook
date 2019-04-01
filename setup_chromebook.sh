@@ -35,14 +35,15 @@ sudo mv terraform /usr/local/bin
 rm -rf terraform_${tf_version}_linux_arm.zip
 
 #Install hub
+read -e -p "Enter Platform (amd/arm): " -i "amd" PLATFORM
 hub_version=$(get_latest github/hub | cut -c 2-)
-wget https://github.com/github/hub/releases/download/v${hub_version}/hub-linux-arm64-${hub_version}.tgz
-tar zvxf hub-linux-arm64-${hub_version}.tgz
-sudo mv hub-linux-arm64-${hub_version}/bin/hub /usr/local/bin/
-mv hub-linux-arm64-${hub_version}/etc/hub.bash_completion.sh ~/
-echo ". $HOME/hub.bash_completion.sh" >> ~/.bash_profile
-rm -rf hub-linux-${hub_version}
-echo 'eval "$(hub alias -s)"' >> ~/.bash_profile
+wget https://github.com/github/hub/releases/download/v${hub_version}/hub-linux-${PLATFORM}64-${hub_version}.tgz
+tar zvxf hub-linux-${PLATFORM}64-${hub_version}.tgz
+sudo mv hub-linux-${PLATFORM}64-${hub_version}/bin/hub /usr/local/bin/
+mv hub-linux-${PLATFORM}64-${hub_version}/etc/hub.bash_completion.sh ~/
+echo ". $HOME/hub.bash_completion.sh" >> ~/.bashrc
+rm -rf hub-linux-${PLATFORM}64-${hub_version}*
+echo 'eval "$(hub alias -s)"' >> ~/.bashrc
 
 #Install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
