@@ -24,7 +24,7 @@ get_latest() {
 }
 
 #Install base packages
-sudo apt-get install -y unzip libffi-dev libssl-dev git curl wget python gcc vim groff build-essential dnsutils python-dev libxml2-dev libxslt1-dev
+sudo apt-get install -y unzip libffi-dev libssl-dev git curl wget python gcc vim groff build-essential dnsutils python-dev libxml2-dev libxslt1-dev jq
 
 tf_version=$(get_latest hashicorp/terraform | cut -c 2-)
 #Install Terraform
